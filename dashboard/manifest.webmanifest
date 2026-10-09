@@ -1,0 +1,16 @@
+{
+  "name": "learn-coach 学习系统",
+  "short_name": "learn-coach",
+  "description": "AI 学习教练：资料进、证书出",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f3eee2",
+  "theme_color": "#f3eee2",
+  "icons": [
+    { "src": "assets/app.png", "sizes": "256x256", "type": "image/png", "purpose": "any" },
+    { "src": "assets/app-48.png", "sizes": "48x48", "type": "image/png", "purpose": "any" },
+    { "src": "assets/app-32.png", "sizes": "32x32", "type": "image/png", "purpose": "any" },
+    { "src": "assets/app-16.png", "sizes": "16x16", "type": "image/png", "purpose": "any" }
+  ]
+}

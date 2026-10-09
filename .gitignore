@@ -1,0 +1,14 @@
+# 私密数据——绝不入库
+workspaces/
+config.json
+
+# 构建产物与缓存
+app-dist/
+app-build/
+__pycache__/
+*.exe
+*.spec
+
+# 运行时生成
+launcher-debug.log
+.obsidian/
