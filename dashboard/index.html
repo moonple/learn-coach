@@ -9,39 +9,40 @@
 <link rel="icon" type="image/png" sizes="48x48" href="assets/app-48.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/app-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/app-16.png">
-<meta name="theme-color" content="#f3eee2">
+<meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="topbar">
-  <div class="brand"><span class="logo">📚</span> learn-coach 学习系统</div>
-  <div class="controls">
-    <select id="ws-select" title="切换学习工作区"></select>
-    <button id="del-topic" title="删除当前主题（连同全部学习数据与上传资料，不可恢复）">🗑</button>
-    <button id="new-topic" title="新建学习主题（网页立项）">＋ 新主题</button>
-    <button id="refresh" title="重新读取工作区数据（不重载界面）">刷新数据</button>
-    <button id="reload-page" title="重新加载整个界面（应用更新后点这里生效）">⟳ 刷新页面</button>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><span class="logo">📗</span><span class="brand-txt">learn-coach</span></div>
+    <nav class="nav" id="nav">
+      <button data-tab="home" class="active"><span class="ico">🏠</span><span class="lbl">总览</span></button>
+      <button data-tab="coach"><span class="ico">💬</span><span class="lbl">AI 教练</span></button>
+      <button data-tab="graph"><span class="ico">🕸️</span><span class="lbl">知识图谱</span></button>
+      <button data-tab="review"><span class="ico">🃏</span><span class="lbl">复习</span></button>
+      <button data-tab="library"><span class="ico">📖</span><span class="lbl">资料</span></button>
+      <button data-tab="settings"><span class="ico">⚙️</span><span class="lbl">设置</span></button>
+    </nav>
+    <div class="side-foot">
+      <div>数据全部保存在本机</div>
+      <div id="updated" class="muted"></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="top-title" id="top-title">总览</div>
+      <div class="top-actions">
+        <select id="ws-select" title="切换学习主题"></select>
+        <button id="refresh" class="btn icon-btn" title="重新读取工作区数据（教练窗口写入后点这里同步）">⟳</button>
+        <button id="new-topic" class="btn primary">＋ 新主题</button>
+      </div>
+    </header>
+    <main id="view"><div class="empty">正在读取工作区数据…</div></main>
   </div>
-</header>
-
-<nav class="tabs" id="tabs">
-  <button data-tab="overview" class="active">🏠 总览</button>
-  <button data-tab="modules">📚 学习进度</button>
-  <button data-tab="graph">🗺️ 知识图谱</button>
-  <button data-tab="cards">🃏 卡片复习</button>
-  <button data-tab="mistakes">📝 错题本</button>
-  <button data-tab="weekly">📋 学习周报</button>
-  <button data-tab="coach">🤖 AI教练</button>
-  <button data-tab="settings">⚙️ 设置</button>
-</nav>
-
-<main id="view"><div class="empty">正在读取工作区数据…</div></main>
-
-<footer class="foot">
-  数据保存在本机 · 评分以答题记录为准
-  · <span id="updated"></span>
-</footer>
-
+</div>
+<div id="modal-root"></div>
 <script src="app.js"></script>
 </body>
 </html>
